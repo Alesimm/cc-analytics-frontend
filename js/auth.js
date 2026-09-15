@@ -1,61 +1,73 @@
-// esperamos a que el documento html este completamente cargado
+// esperamos a que el documento cargue
 document.addEventListener("DOMContentLoaded", () => {
     
-    // capturamos los elementos del formulario del dom
+    // agarramos los elementos que vamos a utilizar
     const loginForm = document.getElementById("login-form");
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
     const emailError = document.getElementById("email-error");
     const passwordError = document.getElementById("password-error");
+    const bgImage = document.getElementById("bg-image");
 
-    // dominios hibridos: requeridos por el profesor + identidad del club
+    // correos permitidos en la plataforma
     const dominiosPermitidos = ["@colocolo.cl", "@duoc.cl", "@profesor.duoc.cl", "@gmail.com"];
 
-    // interceptamos el clic en el boton ingresar
+    // evento al intentar iniciar sesion
     loginForm.addEventListener("submit", (e) => {
-        // evitamos que el navegador recargue la pagina (regla de oro spa)
+        // evitamos que la pagina recargue
         e.preventDefault(); 
 
-        // paso 1: limpiamos los errores visuales de intentos anteriores
+        // limpiamos las alertas rojas viejas
         emailError.classList.add("hidden");
         passwordError.classList.add("hidden");
-        emailInput.classList.remove("border-red-500");
-        passwordInput.classList.remove("border-red-500");
+        emailInput.classList.remove("border-red-500", "bg-red-50");
+        passwordInput.classList.remove("border-red-500", "bg-red-50");
 
-        // capturamos lo que el usuario escribio quitando espacios en blanco
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
-        let formularioValido = true;
+        let esValido = true;
 
-        // paso 2: validacion de correo
-        const tieneDominioValido = dominiosPermitidos.some(dominio => email.endsWith(dominio));
+        // comprobamos que el dominio exista en nuestra lista
+        const dominioValido = dominiosPermitidos.some(dominio => email.endsWith(dominio));
         
-        if (email === "" || !tieneDominioValido) {
-            // inyectamos el error en el dom mostrando la esencia del proyecto
-            emailError.textContent = "usa un correo valido (ej: @colocolo.cl o @duoc.cl).";
+        if (email === "" || !dominioValido) {
+            // mostramos error formal de correo
+            emailError.textContent = "Por favor, ingresa un correo corporativo válido (ej: @colocolo.cl o @duoc.cl).";
             emailError.classList.remove("hidden");
-            emailInput.classList.add("border-red-500");
-            formularioValido = false;
+            emailInput.classList.add("border-red-500", "bg-red-50");
+            esValido = false;
         }
 
-        // paso 3: validacion de contraseña estricta
+        // comprobamos que la clave tenga el largo correcto
         if (password.length < 4 || password.length > 10) {
-            // inyectamos el error en el dom sin usar alerts
-            passwordError.textContent = "la contraseña debe tener entre 4 y 10 caracteres.";
+            // mostramos error formal de contraseña
+            passwordError.textContent = "La contraseña debe contener estrictamente entre 4 y 10 caracteres.";
             passwordError.classList.remove("hidden");
-            passwordInput.classList.add("border-red-500");
-            formularioValido = false;
+            passwordInput.classList.add("border-red-500", "bg-red-50");
+            esValido = false;
         }
 
-        // paso 4: transicion spa si no hay errores
-        if (formularioValido) {
-            console.log("acceso autorizado. iniciando transicion spa...");
+        // entramos al sistema si todo es correcto
+        if (esValido) {
+            // ocultamos el formulario suavemente
+            const loginView = document.getElementById("login-view");
+            loginView.classList.add("opacity-0", "scale-95");
             
-            // ocultamos el login entero
-            document.getElementById("login-view").classList.add("hidden");
-            
-            // revelamos el contenedor de la aplicacion
-            document.getElementById("app-view").classList.remove("hidden");
+            // esperamos medio segundo para el cambio visual
+            setTimeout(() => {
+                loginView.classList.add("hidden");
+                
+                // mostramos el contenedor principal
+                document.getElementById("app-view").classList.remove("hidden");
+                
+                // difuminamos el fondo para darle estilo premium a las paginas internas
+                bgImage.classList.add("blur-[2px]", "opacity-50");
+                
+                // inyectamos el home.html usando nuestro router
+                if (typeof window.cargarVista === 'function') {
+                    window.cargarVista('pages/home.html');
+                }
+            }, 500); 
         }
     });
 });
