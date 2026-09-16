@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC Analytics - Formaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Contenedor Principal (Sin barra lateral) -->
+    <main class="p-8">
+        
+        <div class="flex gap-8 max-w-6xl mx-auto border-2 border-black bg-white p-6">
+            
+            <!-- COLUMNA IZQUIERDA (Cancha y Suplentes) -->
+            <div class="w-2/3">
+                <h1 class="text-2xl font-bold mb-4">Formaciones</h1>
+                
+                <!-- CANCHA (Vertical) -->
+                <div class="bg-white border-2 border-black relative h-[600px] w-full mb-4">
+                    
+                    <!-- Líneas Básicas Grises -->
+                    <div class="absolute top-1/2 w-full border-b-2 border-gray-300"></div> 
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-2 border-gray-300 rounded-full"></div> 
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 border-2 border-gray-300 border-t-0"></div> 
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-24 border-2 border-gray-300 border-b-0"></div> 
+
+                    <!-- 11 Jugadores (Formación 3-4-3) -->
+                    <div title="Gabriel Maureira" class="absolute bottom-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">25</div>
+                    
+                    <div title="Jonathan Villagra" class="absolute bottom-[20%] left-[20%] w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">2</div>
+                    <div title="Arturo Vidal" class="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">23</div>
+                    <div title="Joaquín Sosa" class="absolute bottom-[20%] right-[20%] w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">4</div>
+
+                    <div title="Jeyson Rojas" class="absolute top-[55%] left-[15%] w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">28</div>
+                    <div title="Álvaro Madrid" class="absolute top-[55%] left-[35%] w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">8</div>
+                    <div title="Víctor Méndez" class="absolute top-[55%] right-[35%] w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">5</div>
+                    <div title="Diego Ulloa" class="absolute top-[55%] right-[15%] w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">26</div>
+
+                    <div title="Leandro Hernández" class="absolute top-[25%] left-[25%] w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">24</div>
+                    <div title="Javier Correa" class="absolute top-[15%] left-1/2 -translate-x-1/2 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">9</div>
+                    <div title="Lautaro Pastrán" class="absolute top-[25%] right-[25%] w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">10</div>
+                </div>
+
+                <!-- SUPLENTES -->
+                <div>
+                    <h3 class="text-sm font-bold uppercase mb-2">Suplentes</h3>
+                    <div class="border-2 border-black p-4 flex justify-between">
+                        <div title="Fernando de Paul" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">1</div>
+                        <div title="Daniel Gutiérrez" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">3</div>
+                        <div title="Tomás Alarcón" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">6</div>
+                        <div title="Francisco Marchant" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">7</div>
+                        <div title="Marcos Bolados" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">11</div>
+                        <div title="Erick Wiemberg" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">21</div>
+                        <div title="Cristián Zavala" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold border-2 border-black">27</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA (Plantillas Guardadas y Estadísticas) -->
+            <div class="w-1/3 flex flex-col gap-10 pt-12">
+                
+                <!-- Formaciones Guardadas -->
+                <div>
+                    <h3 class="text-sm font-bold uppercase mb-4">Formaciones Guardadas</h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="border-2 border-black p-3 flex justify-between items-center">
+                            <span class="text-sm font-medium">4-3-3 Ofensiva</span>
+                            <div class="space-x-3 text-gray-600">
+                                <i class="fa-solid fa-pen cursor-pointer hover:text-black"></i>
+                                <i class="fa-solid fa-xmark cursor-pointer hover:text-black"></i>
+                            </div>
+                        </div>
+                        <div class="border-2 border-black p-3 flex justify-between items-center">
+                            <span class="text-sm font-medium">4-4-2 Clásica</span>
+                            <div class="space-x-3 text-gray-600">
+                                <i class="fa-solid fa-pen cursor-pointer hover:text-black"></i>
+                                <i class="fa-solid fa-xmark cursor-pointer hover:text-black"></i>
+                            </div>
+                        </div>
+                        <div class="border-2 border-black p-3 flex justify-between items-center">
+                            <span class="text-sm font-medium">3-5-2 Control</span>
+                            <div class="space-x-3 text-gray-600">
+                                <i class="fa-solid fa-pen cursor-pointer hover:text-black"></i>
+                                <i class="fa-solid fa-xmark cursor-pointer hover:text-black"></i>
+                            </div>
+                        </div>
+                        <button class="bg-black text-white font-bold py-3 mt-2 text-sm hover:bg-gray-800 transition">
+                            + Crear Nueva Formación
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Estadísticas Tácticas -->
+                <div>
+                    <h3 class="text-sm font-bold uppercase mb-6">Estadísticas Tácticas</h3>
+                    <div class="flex flex-col gap-6">
+                        <div>
+                            <label class="block text-sm mb-2">Presión</label>
+                            <input type="range" class="w-full accent-black cursor-pointer" min="1" max="100" value="60">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-2">Línea de Defensa</label>
+                            <input type="range" class="w-full accent-black cursor-pointer" min="1" max="100" value="40">
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-2">Intensidad</label>
+                            <input type="range" class="w-full accent-black cursor-pointer" min="1" max="100" value="80">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
