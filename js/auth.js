@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 // difuminamos el fondo para darle estilo premium a las paginas internas
                 bgImage.classList.add("blur-[2px]", "opacity-50");
                 
-                // inyectamos el home.html usando nuestro router
+                // inyectamos el home.html apuntando al NUEVO contenedor 'dynamic-view'
                 if (typeof window.cargarVista === 'function') {
-                    window.cargarVista('pages/home.html');
+                    window.cargarVista('pages/home.html', 'dynamic-view');
                 }
             }, 500); 
         }

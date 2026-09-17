@@ -1,23 +1,22 @@
-// esperamos a que cargue todo el html
+// js/app.js
 document.addEventListener("DOMContentLoaded", () => {
     
-    // funcion que busca otra pagina y la mete al html sin recargar
-    window.cargarVista = async (ruta, contenedorId = 'app-view') => {
+    window.cargarVista = async (ruta, contenedorId = 'dynamic-view') => {
         try {
-            // traemos el archivo
+            console.log(`Cargando fragmento desde: ${ruta}`);
             const respuesta = await fetch(ruta);
             
-            if (!respuesta.ok) throw new Error("no se pudo cargar la pagina");
+            if (!respuesta.ok) throw new Error("No se pudo cargar la vista");
 
-            // sacamos el texto html
-            const html = await respuesta.text();
-            
-            // inyectamos el codigo en el div
-            document.getElementById(contenedorId).innerHTML = html;
+            // Inyectamos el texto directamente, asumiendo que el archivo ya viene limpio
+            document.getElementById(contenedorId).innerHTML = await respuesta.text();
 
         } catch (error) {
-            console.error("error en router:", error);
-            document.getElementById(contenedorId).innerHTML = `<h2 class="text-red-500 text-center mt-10">Error al cargar la vista</h2>`;
+            console.error("Error en router:", error);
+            document.getElementById(contenedorId).innerHTML = `
+                <div class="p-4 bg-red-50 border-2 border-black text-red-600 font-bold uppercase">
+                    Error al cargar el módulo.
+                </div>`;
         }
     };
 });
