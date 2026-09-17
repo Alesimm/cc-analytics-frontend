@@ -1,162 +1,148 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CC Analytics | Calendario</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body class="bg-white text-black font-sans antialiased min-h-screen">
+<!-- Contenedor Principal -->
+<div class="p-8 w-full max-w-6xl mx-auto">
     
-    <!-- Contenedor Principal -->
-    <div class="p-8 w-full max-w-6xl mx-auto">
-        
-        <!-- Cabecera Superior -->
-        <header class="flex justify-between items-center border-b-2 border-black pb-4 mb-8">
-            <h1 class="text-2xl font-bold tracking-wide">Calendario</h1>
-            <div class="w-10 h-10 rounded-full border-2 border-black flex items-center justify-center">
-                <i class="fa-regular fa-user"></i>
-            </div>
-        </header>
-
-        <!-- Cuadrícula Principal -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
-            <!-- COLUMNA IZQUIERDA: PRÓXIMOS PARTIDOS -->
-            <div>
-                <h2 class="text-sm font-bold uppercase tracking-wide mb-2">Próximos Partidos</h2>
-                
-                <!-- Bounding Box (Contenedor Exterior) -->
-                <div class="border-2 border-black p-4 bg-gray-50">
-                    <div class="space-y-3">
-                        
-                        <!-- Tarjeta 1 -->
-                        <div class="flex items-center justify-between border border-black bg-white p-4">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
-                                <div>
-                                    <p class="font-bold text-base">vs Rival 1</p>
-                                    <p class="text-xs text-gray-500 mt-1">Sáb 05 · 18:00 hrs</p>
-                                </div>
-                            </div>
-                            <span class="text-xs text-gray-400 font-medium tracking-wide">Local</span>
-                        </div>
-
-                        <!-- Tarjeta 2 -->
-                        <div class="flex items-center justify-between border border-black bg-white p-4">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
-                                <div>
-                                    <p class="font-bold text-base">vs Rival 2</p>
-                                    <p class="text-xs text-gray-500 mt-1">Sáb 06 · 18:00 hrs</p>
-                                </div>
-                            </div>
-                            <span class="text-xs text-gray-400 font-medium tracking-wide">Visita</span>
-                        </div>
-
-                        <!-- Tarjeta 3 -->
-                        <div class="flex items-center justify-between border border-black bg-white p-4">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
-                                <div>
-                                    <p class="font-bold text-base">vs Rival 3</p>
-                                    <p class="text-xs text-gray-500 mt-1">Sáb 07 · 18:00 hrs</p>
-                                </div>
-                            </div>
-                            <span class="text-xs text-gray-400 font-medium tracking-wide">Local</span>
-                        </div>
-
-                        <!-- Tarjeta 4 -->
-                        <div class="flex items-center justify-between border border-black bg-white p-4">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
-                                <div>
-                                    <p class="font-bold text-base">vs Rival 4</p>
-                                    <p class="text-xs text-gray-500 mt-1">Sáb 08 · 18:00 hrs</p>
-                                </div>
-                            </div>
-                            <span class="text-xs text-gray-400 font-medium tracking-wide">Visita</span>
-                        </div>
-
-                        <!-- Tarjeta 5 -->
-                        <div class="flex items-center justify-between border border-black bg-white p-4">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
-                                <div>
-                                    <p class="font-bold text-base">vs Rival 5</p>
-                                    <p class="text-xs text-gray-500 mt-1">Sáb 09 · 18:00 hrs</p>
-                                </div>
-                            </div>
-                            <span class="text-xs text-gray-400 font-medium tracking-wide">Local</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- COLUMNA DERECHA: PARTIDOS ANTERIORES -->
-            <div>
-                <h2 class="text-sm font-bold uppercase tracking-wide mb-2">Partidos Anteriores</h2>
-                
-                <!-- Bounding Box (Contenedor Exterior) -->
-                <div class="border-2 border-black p-4 bg-gray-50">
-                    <div class="space-y-3">
-
-                        <!-- Tarjeta Historial 1 -->
-                        <div class="border border-black bg-white p-4">
-                            <p class="font-bold text-base tracking-wide">COLO-COLO 2 - 1 Rival 1</p>
-                            <p class="text-xs text-gray-500 mt-1 mb-4">Dom 01 · Campeonato Nacional</p>
-                            
-                            <div class="flex space-x-2">
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Goles</button>
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Tarjetas</button>
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Posesión</button>
-                            </div>
-                        </div>
-
-                        <!-- Tarjeta Historial 2 -->
-                        <div class="border border-black bg-white p-4">
-                            <p class="font-bold text-base tracking-wide">COLO-COLO 3 - 1 Rival 2</p>
-                            <p class="text-xs text-gray-500 mt-1 mb-4">Dom 02 · Campeonato Nacional</p>
-                            
-                            <div class="flex space-x-2">
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Goles</button>
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Tarjetas</button>
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Posesión</button>
-                            </div>
-                        </div>
-
-                        <!-- Tarjeta Historial 3 -->
-                        <div class="border border-black bg-white p-4">
-                            <p class="font-bold text-base tracking-wide">COLO-COLO 2 - 1 Rival 3</p>
-                            <p class="text-xs text-gray-500 mt-1 mb-4">Dom 03 · Campeonato Nacional</p>
-                            
-                            <div class="flex space-x-2">
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Goles</button>
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Tarjetas</button>
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Posesión</button>
-                            </div>
-                        </div>
-
-                        <!-- Tarjeta Historial 4 -->
-                        <div class="border border-black bg-white p-4">
-                            <p class="font-bold text-base tracking-wide">COLO-COLO 3 - 1 Rival 4</p>
-                            <p class="text-xs text-gray-500 mt-1 mb-4">Dom 04 · Campeonato Nacional</p>
-                            
-                            <div class="flex space-x-2">
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Goles</button>
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Tarjetas</button>
-                                <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Posesión</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
+    <!-- Cabecera Superior -->
+    <header class="flex justify-between items-center border-b-2 border-black pb-4 mb-8">
+        <h1 class="text-2xl font-bold tracking-wide">Calendario</h1>
+        <div class="w-10 h-10 rounded-full border-2 border-black flex items-center justify-center">
+            <i class="fa-regular fa-user"></i>
         </div>
+    </header>
+
+    <!-- Cuadrícula Principal -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- COLUMNA IZQUIERDA: PRÓXIMOS PARTIDOS -->
+        <div>
+            <h2 class="text-sm font-bold uppercase tracking-wide mb-2">Próximos Partidos</h2>
+            
+            <!-- Bounding Box (Contenedor Exterior) -->
+            <div class="border-2 border-black p-4 bg-gray-50">
+                <div class="space-y-3">
+                    
+                    <!-- Tarjeta 1 -->
+                    <div class="flex items-center justify-between border border-black bg-white p-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-bold text-base">vs Rival 1</p>
+                                <p class="text-xs text-gray-500 mt-1">Sáb 05 · 18:00 hrs</p>
+                            </div>
+                        </div>
+                        <span class="text-xs text-gray-400 font-medium tracking-wide">Local</span>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="flex items-center justify-between border border-black bg-white p-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-bold text-base">vs Rival 2</p>
+                                <p class="text-xs text-gray-500 mt-1">Sáb 06 · 18:00 hrs</p>
+                            </div>
+                        </div>
+                        <span class="text-xs text-gray-400 font-medium tracking-wide">Visita</span>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="flex items-center justify-between border border-black bg-white p-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-bold text-base">vs Rival 3</p>
+                                <p class="text-xs text-gray-500 mt-1">Sáb 07 · 18:00 hrs</p>
+                            </div>
+                        </div>
+                        <span class="text-xs text-gray-400 font-medium tracking-wide">Local</span>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div class="flex items-center justify-between border border-black bg-white p-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-bold text-base">vs Rival 4</p>
+                                <p class="text-xs text-gray-500 mt-1">Sáb 08 · 18:00 hrs</p>
+                            </div>
+                        </div>
+                        <span class="text-xs text-gray-400 font-medium tracking-wide">Visita</span>
+                    </div>
+
+                    <!-- Tarjeta 5 -->
+                    <div class="flex items-center justify-between border border-black bg-white p-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full border border-black bg-gray-100 flex-shrink-0"></div>
+                            <div>
+                                <p class="font-bold text-base">vs Rival 5</p>
+                                <p class="text-xs text-gray-500 mt-1">Sáb 09 · 18:00 hrs</p>
+                            </div>
+                        </div>
+                        <span class="text-xs text-gray-400 font-medium tracking-wide">Local</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: PARTIDOS ANTERIORES -->
+        <div>
+            <h2 class="text-sm font-bold uppercase tracking-wide mb-2">Partidos Anteriores</h2>
+            
+            <!-- Bounding Box (Contenedor Exterior) -->
+            <div class="border-2 border-black p-4 bg-gray-50">
+                <div class="space-y-3">
+
+                    <!-- Tarjeta Historial 1 -->
+                    <div class="border border-black bg-white p-4">
+                        <p class="font-bold text-base tracking-wide">COLO-COLO 2 - 1 Rival 1</p>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Dom 01 · Campeonato Nacional</p>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Goles</button>
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Tarjetas</button>
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Posesión</button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Historial 2 -->
+                    <div class="border border-black bg-white p-4">
+                        <p class="font-bold text-base tracking-wide">COLO-COLO 3 - 1 Rival 2</p>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Dom 02 · Campeonato Nacional</p>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Goles</button>
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Tarjetas</button>
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Posesión</button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Historial 3 -->
+                    <div class="border border-black bg-white p-4">
+                        <p class="font-bold text-base tracking-wide">COLO-COLO 2 - 1 Rival 3</p>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Dom 03 · Campeonato Nacional</p>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Goles</button>
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Tarjetas</button>
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Posesión</button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Historial 4 -->
+                    <div class="border border-black bg-white p-4">
+                        <p class="font-bold text-base tracking-wide">COLO-COLO 3 - 1 Rival 4</p>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Dom 04 · Campeonato Nacional</p>
+                        
+                        <div class="flex space-x-2">
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Goles</button>
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Tarjetas</button>
+                            <button class="flex-1 border border-black bg-gray-50 hover:bg-gray-200 py-1.5 text-xs font-medium transition">Posesión</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </div>
-</body>
-</html>
+</div>

@@ -1,141 +1,127 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CC Analytics | Centro Médico</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body class="bg-white text-black font-sans antialiased min-h-screen">
+<!-- Contenedor Principal -->
+<div class="p-8 w-full max-w-6xl mx-auto">
     
-    <!-- Contenedor Principal -->
-    <div class="p-8 w-full max-w-6xl mx-auto">
+    <!-- Cabecera Superior -->
+    <header class="flex justify-between items-center border-b-2 border-black pb-4 mb-8">
+        <h1 class="text-2xl font-bold tracking-wide">Centro Médico</h1>
+        <div class="w-10 h-10 rounded-full border-2 border-black flex items-center justify-center">
+            <i class="fa-regular fa-user"></i>
+        </div>
+    </header>
+
+    <!-- Controles: Leyenda y Botón Añadir -->
+    <div class="flex justify-between items-center mb-6">
         
-        <!-- Cabecera Superior -->
-        <header class="flex justify-between items-center border-b-2 border-black pb-4 mb-8">
-            <h1 class="text-2xl font-bold tracking-wide">Centro Médico</h1>
-            <div class="w-10 h-10 rounded-full border-2 border-black flex items-center justify-center">
-                <i class="fa-regular fa-user"></i>
+        <!-- Leyenda de Gravedad -->
+        <div class="flex space-x-6 text-sm font-medium">
+            <div class="flex items-center space-x-2">
+                <span class="w-4 h-4 rounded-full border-2 border-black bg-white"></span>
+                <span>Leve</span>
             </div>
-        </header>
-
-        <!-- Controles: Leyenda y Botón Añadir -->
-        <div class="flex justify-between items-center mb-6">
-            
-            <!-- Leyenda de Gravedad -->
-            <div class="flex space-x-6 text-sm font-medium">
-                <div class="flex items-center space-x-2">
-                    <span class="w-4 h-4 rounded-full border-2 border-black bg-white"></span>
-                    <span>Leve</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span class="w-4 h-4 rounded-full border-2 border-black bg-gray-400"></span>
-                    <span>Moderada</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span class="w-4 h-4 rounded-full border-2 border-black bg-black"></span>
-                    <span>Grave</span>
-                </div>
+            <div class="flex items-center space-x-2">
+                <span class="w-4 h-4 rounded-full border-2 border-black bg-gray-400"></span>
+                <span>Moderada</span>
             </div>
-
-            <!-- Botón Añadir -->
-            <button class="bg-black text-white px-6 py-2 font-bold text-sm tracking-wide hover:bg-gray-800 transition-colors">
-                + Añadir Lesión
-            </button>
+            <div class="flex items-center space-x-2">
+                <span class="w-4 h-4 rounded-full border-2 border-black bg-black"></span>
+                <span>Grave</span>
+            </div>
         </div>
 
-        <!-- Tabla de Datos Clínicos -->
-        <div class="border-2 border-black overflow-hidden">
-            <table class="w-full text-left border-collapse">
-                <!-- Cabecera Negra -->
-                <thead>
-                    <tr class="bg-black text-white">
-                        <th class="py-4 px-6 font-bold text-sm">Jugador</th>
-                        <th class="py-4 px-6 font-bold text-sm">Tipo de Lesión</th>
-                        <th class="py-4 px-6 font-bold text-sm">Gravedad</th>
-                        <th class="py-4 px-6 font-bold text-sm">T. Recuperación</th>
-                        <th class="py-4 px-6 font-bold text-sm">Estado</th>
-                    </tr>
-                </thead>
-                <!-- Cuerpo de la Tabla -->
-                <tbody class="text-sm">
-                    
-                    <!-- Fila 1 -->
-                    <tr class="border-b border-gray-300 hover:bg-gray-50 transition-colors">
-                        <td class="py-4 px-6 font-medium">G. Suazo</td>
-                        <td class="py-4 px-6 text-gray-700">Esguince de tobillo</td>
-                        <td class="py-4 px-6">
-                            <div class="flex items-center space-x-2">
-                                <span class="w-4 h-4 rounded-full border-2 border-black bg-gray-400"></span>
-                                <span>Moderada</span>
-                            </div>
-                        </td>
-                        <td class="py-4 px-6 text-gray-700">3 semanas</td>
-                        <td class="py-4 px-6 text-gray-700">En tratamiento</td>
-                    </tr>
-                    
-                    <!-- Fila 2 -->
-                    <tr class="border-b border-gray-300 hover:bg-gray-50 transition-colors">
-                        <td class="py-4 px-6 font-medium">J. Zaldivia</td>
-                        <td class="py-4 px-6 text-gray-700">Desgarro muscular</td>
-                        <td class="py-4 px-6">
-                            <div class="flex items-center space-x-2">
-                                <span class="w-4 h-4 rounded-full border-2 border-black bg-black"></span>
-                                <span>Grave</span>
-                            </div>
-                        </td>
-                        <td class="py-4 px-6 text-gray-700">6 semanas</td>
-                        <td class="py-4 px-6 text-gray-700">En tratamiento</td>
-                    </tr>
-
-                    <!-- Fila 3 -->
-                    <tr class="border-b border-gray-300 hover:bg-gray-50 transition-colors">
-                        <td class="py-4 px-6 font-medium">A. Vega</td>
-                        <td class="py-4 px-6 text-gray-700">Golpe / contusión</td>
-                        <td class="py-4 px-6">
-                            <div class="flex items-center space-x-2">
-                                <span class="w-4 h-4 rounded-full border-2 border-black bg-white"></span>
-                                <span>Leve</span>
-                            </div>
-                        </td>
-                        <td class="py-4 px-6 text-gray-700">5 días</td>
-                        <td class="py-4 px-6 text-gray-700">Recuperado</td>
-                    </tr>
-
-                    <!-- Fila 4 -->
-                    <tr class="border-b border-gray-300 hover:bg-gray-50 transition-colors">
-                        <td class="py-4 px-6 font-medium">L. Cepeda</td>
-                        <td class="py-4 px-6 text-gray-700">Lesión de rodilla</td>
-                        <td class="py-4 px-6">
-                            <div class="flex items-center space-x-2">
-                                <span class="w-4 h-4 rounded-full border-2 border-black bg-black"></span>
-                                <span>Grave</span>
-                            </div>
-                        </td>
-                        <td class="py-4 px-6 text-gray-700">8 semanas</td>
-                        <td class="py-4 px-6 text-gray-700">En cirugía</td>
-                    </tr>
-
-                    <!-- Fila 5 -->
-                    <tr class="hover:bg-gray-50 transition-colors">
-                        <td class="py-4 px-6 font-medium">F. Reyes</td>
-                        <td class="py-4 px-6 text-gray-700">Sobrecarga muscular</td>
-                        <td class="py-4 px-6">
-                            <div class="flex items-center space-x-2">
-                                <span class="w-4 h-4 rounded-full border-2 border-black bg-white"></span>
-                                <span>Leve</span>
-                            </div>
-                        </td>
-                        <td class="py-4 px-6 text-gray-700">1 semana</td>
-                        <td class="py-4 px-6 text-gray-700">En tratamiento</td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-
+        <!-- Botón Añadir -->
+        <button class="bg-black text-white px-6 py-2 font-bold text-sm tracking-wide hover:bg-gray-800 transition-colors">
+            + Añadir Lesión
+        </button>
     </div>
-</body>
-</html>
+
+    <!-- Tabla de Datos Clínicos -->
+    <div class="border-2 border-black overflow-hidden">
+        <table class="w-full text-left border-collapse">
+            <!-- Cabecera Negra -->
+            <thead>
+                <tr class="bg-black text-white">
+                    <th class="py-4 px-6 font-bold text-sm">Jugador</th>
+                    <th class="py-4 px-6 font-bold text-sm">Tipo de Lesión</th>
+                    <th class="py-4 px-6 font-bold text-sm">Gravedad</th>
+                    <th class="py-4 px-6 font-bold text-sm">T. Recuperación</th>
+                    <th class="py-4 px-6 font-bold text-sm">Estado</th>
+                </tr>
+            </thead>
+            <!-- Cuerpo de la Tabla -->
+            <tbody class="text-sm">
+                
+                <!-- Fila 1 -->
+                <tr class="border-b border-gray-300 hover:bg-gray-50 transition-colors">
+                    <td class="py-4 px-6 font-medium">G. Suazo</td>
+                    <td class="py-4 px-6 text-gray-700">Esguince de tobillo</td>
+                    <td class="py-4 px-6">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-4 h-4 rounded-full border-2 border-black bg-gray-400"></span>
+                            <span>Moderada</span>
+                        </div>
+                    </td>
+                    <td class="py-4 px-6 text-gray-700">3 semanas</td>
+                    <td class="py-4 px-6 text-gray-700">En tratamiento</td>
+                </tr>
+                
+                <!-- Fila 2 -->
+                <tr class="border-b border-gray-300 hover:bg-gray-50 transition-colors">
+                    <td class="py-4 px-6 font-medium">J. Zaldivia</td>
+                    <td class="py-4 px-6 text-gray-700">Desgarro muscular</td>
+                    <td class="py-4 px-6">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-4 h-4 rounded-full border-2 border-black bg-black"></span>
+                            <span>Grave</span>
+                        </div>
+                    </td>
+                    <td class="py-4 px-6 text-gray-700">6 semanas</td>
+                    <td class="py-4 px-6 text-gray-700">En tratamiento</td>
+                </tr>
+
+                <!-- Fila 3 -->
+                <tr class="border-b border-gray-300 hover:bg-gray-50 transition-colors">
+                    <td class="py-4 px-6 font-medium">A. Vega</td>
+                    <td class="py-4 px-6 text-gray-700">Golpe / contusión</td>
+                    <td class="py-4 px-6">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-4 h-4 rounded-full border-2 border-black bg-white"></span>
+                            <span>Leve</span>
+                        </div>
+                    </td>
+                    <td class="py-4 px-6 text-gray-700">5 días</td>
+                    <td class="py-4 px-6 text-gray-700">Recuperado</td>
+                </tr>
+
+                <!-- Fila 4 -->
+                <tr class="border-b border-gray-300 hover:bg-gray-50 transition-colors">
+                    <td class="py-4 px-6 font-medium">L. Cepeda</td>
+                    <td class="py-4 px-6 text-gray-700">Lesión de rodilla</td>
+                    <td class="py-4 px-6">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-4 h-4 rounded-full border-2 border-black bg-black"></span>
+                            <span>Grave</span>
+                        </div>
+                    </td>
+                    <td class="py-4 px-6 text-gray-700">8 semanas</td>
+                    <td class="py-4 px-6 text-gray-700">En cirugía</td>
+                </tr>
+
+                <!-- Fila 5 -->
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="py-4 px-6 font-medium">F. Reyes</td>
+                    <td class="py-4 px-6 text-gray-700">Sobrecarga muscular</td>
+                    <td class="py-4 px-6">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-4 h-4 rounded-full border-2 border-black bg-white"></span>
+                            <span>Leve</span>
+                        </div>
+                    </td>
+                    <td class="py-4 px-6 text-gray-700">1 semana</td>
+                    <td class="py-4 px-6 text-gray-700">En tratamiento</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
