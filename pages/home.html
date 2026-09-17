@@ -1,125 +1,111 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CC Analytics | Inicio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body class="bg-white text-gray-900 font-sans antialiased min-h-screen">
+<!-- Contenedor Principal -->
+<div class="p-8 w-full max-w-6xl mx-auto">
     
-    <!-- Contenedor Principal -->
-    <div class="p-8 w-full max-w-6xl mx-auto">
-        
-        <!-- Cabecera Superior -->
-        <header class="flex justify-between items-center border-b-2 border-black pb-4 mb-6">
-            <h1 class="text-2xl font-bold text-black">Inicio</h1>
-            <!-- Ícono de Usuario -->
-            <div class="w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-black">
-                <i class="fa-regular fa-user"></i>
-            </div>
-        </header>
-
-        <!-- Tarjeta: Último Partido -->
-        <div class="border-2 border-black bg-gray-50 py-10 mb-8 text-center">
-            <h2 class="text-3xl font-bold tracking-wide mb-2">COLO-COLO 2 — 1 RIVAL</h2>
-            <p class="text-xs text-gray-500 font-medium tracking-wide">Campeonato Nacional · Fecha 20 · Estadio Monumental</p>
+    <!-- Cabecera Superior -->
+    <header class="flex justify-between items-center border-b-2 border-black pb-4 mb-6">
+        <h1 class="text-2xl font-bold text-black">Inicio</h1>
+        <!-- Ícono de Usuario -->
+        <div class="w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-black">
+            <i class="fa-regular fa-user"></i>
         </div>
+    </header>
 
-        <!-- Cuadrícula Inferior (Métricas y Noticias) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
-            <!-- Columna Izquierda: Rendimiento -->
-            <div>
-                <h3 class="text-sm font-bold text-black uppercase tracking-wide mb-3">Rendimiento del Equipo</h3>
-                
-                <!-- Tarjeta 1: Posesión -->
-                <div class="border-2 border-black p-5 mb-4">
-                    <div class="flex justify-between items-end mb-3">
-                        <span class="text-base font-bold text-black">Posesión</span>
-                        <span class="text-3xl font-bold text-black">58%</span>
-                    </div>
-                    <div class="w-full bg-white h-4 border-2 border-black flex">
-                        <div class="bg-black h-full" style="width: 58%"></div>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 2: Goles -->
-                <div class="border-2 border-black p-5 mb-4">
-                    <div class="flex justify-between items-end mb-3">
-                        <span class="text-base font-bold text-black">Goles</span>
-                        <span class="text-3xl font-bold text-black">2</span>
-                    </div>
-                    <div class="w-full bg-white h-4 border-2 border-black flex">
-                        <div class="bg-black h-full" style="width: 40%"></div>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 3: Tiros al Arco -->
-                <div class="border-2 border-black p-5">
-                    <div class="flex justify-between items-end mb-3">
-                        <span class="text-base font-bold text-black">Tiros al Arco</span>
-                        <span class="text-3xl font-bold text-black">7</span>
-                    </div>
-                    <div class="w-full bg-white h-4 border-2 border-black flex">
-                        <div class="bg-black h-full" style="width: 70%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Columna Derecha: Noticias -->
-            <div>
-                <h3 class="text-sm font-bold text-black uppercase tracking-wide mb-3">Noticias del Fútbol</h3>
-                
-                <!-- Contenedor principal de noticias -->
-                <div class="border-2 border-black p-6">
-                    
-                    <!-- Noticia 1 -->
-                    <div class="flex items-start space-x-4 mb-6 border-b border-gray-200 pb-6">
-                        <div class="w-16 h-16 bg-gray-200 border-2 border-black flex-shrink-0"></div>
-                        <div class="w-full flex flex-col justify-center space-y-2 mt-1">
-                            <div class="h-1.5 bg-gray-300 w-full"></div>
-                            <div class="h-1.5 bg-gray-300 w-3/4 mb-1"></div>
-                            <p class="text-xs text-gray-400 mt-2">Hace 1 día(s)</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Noticia 2 -->
-                    <div class="flex items-start space-x-4 mb-6 border-b border-gray-200 pb-6">
-                        <div class="w-16 h-16 bg-gray-200 border-2 border-black flex-shrink-0"></div>
-                        <div class="w-full flex flex-col justify-center space-y-2 mt-1">
-                            <div class="h-1.5 bg-gray-300 w-full"></div>
-                            <div class="h-1.5 bg-gray-300 w-3/4 mb-1"></div>
-                            <p class="text-xs text-gray-400 mt-2">Hace 2 día(s)</p>
-                        </div>
-                    </div>
-
-                    <!-- Noticia 3 -->
-                    <div class="flex items-start space-x-4 mb-6 border-b border-gray-200 pb-6">
-                        <div class="w-16 h-16 bg-gray-200 border-2 border-black flex-shrink-0"></div>
-                        <div class="w-full flex flex-col justify-center space-y-2 mt-1">
-                            <div class="h-1.5 bg-gray-300 w-full"></div>
-                            <div class="h-1.5 bg-gray-300 w-3/4 mb-1"></div>
-                            <p class="text-xs text-gray-400 mt-2">Hace 3 día(s)</p>
-                        </div>
-                    </div>
-
-                    <!-- Noticia 4 -->
-                    <div class="flex items-start space-x-4">
-                        <div class="w-16 h-16 bg-gray-200 border-2 border-black flex-shrink-0"></div>
-                        <div class="w-full flex flex-col justify-center space-y-2 mt-1">
-                            <div class="h-1.5 bg-gray-300 w-full"></div>
-                            <div class="h-1.5 bg-gray-300 w-3/4 mb-1"></div>
-                            <p class="text-xs text-gray-400 mt-2">Hace 4 día(s)</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
+    <!-- Tarjeta: Último Partido -->
+    <div class="border-2 border-black bg-gray-50 py-10 mb-8 text-center">
+        <h2 class="text-3xl font-bold tracking-wide mb-2">COLO-COLO 2 — 1 RIVAL</h2>
+        <p class="text-xs text-gray-500 font-medium tracking-wide">Campeonato Nacional · Fecha 20 · Estadio Monumental</p>
     </div>
-</body>
-</html>
+
+    <!-- Cuadrícula Inferior (Métricas y Noticias) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Columna Izquierda: Rendimiento -->
+        <div>
+            <h3 class="text-sm font-bold text-black uppercase tracking-wide mb-3">Rendimiento del Equipo</h3>
+            
+            <!-- Tarjeta 1: Posesión -->
+            <div class="border-2 border-black p-5 mb-4">
+                <div class="flex justify-between items-end mb-3">
+                    <span class="text-base font-bold text-black">Posesión</span>
+                    <span class="text-3xl font-bold text-black">58%</span>
+                </div>
+                <div class="w-full bg-white h-4 border-2 border-black flex">
+                    <div class="bg-black h-full" style="width: 58%"></div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Goles -->
+            <div class="border-2 border-black p-5 mb-4">
+                <div class="flex justify-between items-end mb-3">
+                    <span class="text-base font-bold text-black">Goles</span>
+                    <span class="text-3xl font-bold text-black">2</span>
+                </div>
+                <div class="w-full bg-white h-4 border-2 border-black flex">
+                    <div class="bg-black h-full" style="width: 40%"></div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Tiros al Arco -->
+            <div class="border-2 border-black p-5">
+                <div class="flex justify-between items-end mb-3">
+                    <span class="text-base font-bold text-black">Tiros al Arco</span>
+                    <span class="text-3xl font-bold text-black">7</span>
+                </div>
+                <div class="w-full bg-white h-4 border-2 border-black flex">
+                    <div class="bg-black h-full" style="width: 70%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Noticias -->
+        <div>
+            <h3 class="text-sm font-bold text-black uppercase tracking-wide mb-3">Noticias del Fútbol</h3>
+            
+            <!-- Contenedor principal de noticias -->
+            <div class="border-2 border-black p-6">
+                
+                <!-- Noticia 1 -->
+                <div class="flex items-start space-x-4 mb-6 border-b border-gray-200 pb-6">
+                    <div class="w-16 h-16 bg-gray-200 border-2 border-black flex-shrink-0"></div>
+                    <div class="w-full flex flex-col justify-center space-y-2 mt-1">
+                        <div class="h-1.5 bg-gray-300 w-full"></div>
+                        <div class="h-1.5 bg-gray-300 w-3/4 mb-1"></div>
+                        <p class="text-xs text-gray-400 mt-2">Hace 1 día(s)</p>
+                    </div>
+                </div>
+                
+                <!-- Noticia 2 -->
+                <div class="flex items-start space-x-4 mb-6 border-b border-gray-200 pb-6">
+                    <div class="w-16 h-16 bg-gray-200 border-2 border-black flex-shrink-0"></div>
+                    <div class="w-full flex flex-col justify-center space-y-2 mt-1">
+                        <div class="h-1.5 bg-gray-300 w-full"></div>
+                        <div class="h-1.5 bg-gray-300 w-3/4 mb-1"></div>
+                        <p class="text-xs text-gray-400 mt-2">Hace 2 día(s)</p>
+                    </div>
+                </div>
+
+                <!-- Noticia 3 -->
+                <div class="flex items-start space-x-4 mb-6 border-b border-gray-200 pb-6">
+                    <div class="w-16 h-16 bg-gray-200 border-2 border-black flex-shrink-0"></div>
+                    <div class="w-full flex flex-col justify-center space-y-2 mt-1">
+                        <div class="h-1.5 bg-gray-300 w-full"></div>
+                        <div class="h-1.5 bg-gray-300 w-3/4 mb-1"></div>
+                        <p class="text-xs text-gray-400 mt-2">Hace 3 día(s)</p>
+                    </div>
+                </div>
+
+                <!-- Noticia 4 -->
+                <div class="flex items-start space-x-4">
+                    <div class="w-16 h-16 bg-gray-200 border-2 border-black flex-shrink-0"></div>
+                    <div class="w-full flex flex-col justify-center space-y-2 mt-1">
+                        <div class="h-1.5 bg-gray-300 w-full"></div>
+                        <div class="h-1.5 bg-gray-300 w-3/4 mb-1"></div>
+                        <p class="text-xs text-gray-400 mt-2">Hace 4 día(s)</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
