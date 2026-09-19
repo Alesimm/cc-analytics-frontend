@@ -1,7 +1,7 @@
-// esperamos a que el documento cargue
+// logica de validacion para el inicio de sesion
 document.addEventListener("DOMContentLoaded", () => {
     
-    // agarramos los elementos que vamos a utilizar
+    // capturamos los inputs y parrafos de error del dom
     const loginForm = document.getElementById("login-form");
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
@@ -9,15 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordError = document.getElementById("password-error");
     const bgImage = document.getElementById("bg-image");
 
-    // correos permitidos en la plataforma
+    // lista de dominios
     const dominiosPermitidos = ["@colocolo.cl", "@duoc.cl", "@profesor.duoc.cl", "@gmail.com"];
 
-    // evento al intentar iniciar sesion
+    // escuchamos el evento cuando envian el formulario
     loginForm.addEventListener("submit", (e) => {
-        // evitamos que la pagina recargue
+        // evitamos que la pagina se recargue
         e.preventDefault(); 
 
-        // limpiamos las alertas rojas viejas
+        // escondemos los mensajes de error y quitamos los bordes rojos
         emailError.classList.add("hidden");
         passwordError.classList.add("hidden");
         emailInput.classList.remove("border-red-500", "bg-red-50");
@@ -27,43 +27,43 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = passwordInput.value.trim();
         let esValido = true;
 
-        // comprobamos que el dominio exista en nuestra lista
+        // revisamos si el correo termina en alguno de los dominios validos
         const dominioValido = dominiosPermitidos.some(dominio => email.endsWith(dominio));
         
         if (email === "" || !dominioValido) {
-            // mostramos error formal de correo
+            // inyectamos el mensaje y pintamos el input rojo
             emailError.textContent = "Por favor, ingresa un correo corporativo válido (ej: @colocolo.cl o @duoc.cl).";
             emailError.classList.remove("hidden");
             emailInput.classList.add("border-red-500", "bg-red-50");
             esValido = false;
         }
 
-        // comprobamos que la clave tenga el largo correcto
+        // revisamos que la contraseña tenga el largo correcto
         if (password.length < 4 || password.length > 10) {
-            // mostramos error formal de contraseña
+            // inyectamos mensaje de error para la contraseña
             passwordError.textContent = "La contraseña debe contener estrictamente entre 4 y 10 caracteres.";
             passwordError.classList.remove("hidden");
             passwordInput.classList.add("border-red-500", "bg-red-50");
             esValido = false;
         }
 
-        // entramos al sistema si todo es correcto
+        // si no hay errores hacemos la transicion a la aplicacion
         if (esValido) {
-            // ocultamos el formulario suavemente
+            // le bajamos la opacidad al login para que desaparezca suave
             const loginView = document.getElementById("login-view");
             loginView.classList.add("opacity-0", "scale-95");
             
-            // esperamos medio segundo para el cambio visual
+            // esperamos medio segundo para sincronizar los cambios visuales
             setTimeout(() => {
                 loginView.classList.add("hidden");
                 
-                // mostramos el contenedor principal
+                // mostramos el contenedor principal que tiene el menu
                 document.getElementById("app-view").classList.remove("hidden");
                 
-                // difuminamos el fondo para darle estilo premium a las paginas internas
+                // aplicamos un filtro al fondo 
                 bgImage.classList.add("blur-[2px]", "opacity-50");
                 
-                // inyectamos el home.html apuntando al NUEVO contenedor 'dynamic-view'
+                // usamos el router para cargar la vista del dashboard
                 if (typeof window.cargarVista === 'function') {
                     window.cargarVista('pages/home.html', 'dynamic-view');
                 }

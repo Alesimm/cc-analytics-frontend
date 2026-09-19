@@ -1,33 +1,32 @@
-// usamos delegacion de eventos para que funcione dentro de la spa
 document.addEventListener("submit", (e) => {
     
-    // verificamos si el evento viene especificamente del formulario de soporte
+    // nos aseguramos que el click venga especificamente de este formulario
     if (e.target && e.target.id === "soporte-form") {
         
-        // bloqueamos recarga
+        // evitamos que la pagina recargue
         e.preventDefault();
 
-        // capturamos campos
+        // capturamos todos los campos del formulario
         const nombre = document.getElementById("soporte-nombre");
         const correo = document.getElementById("soporte-correo");
         const motivo = document.getElementById("soporte-motivo");
         const comentario = document.getElementById("soporte-comentario");
         
-        // capturamos textos de error
+        // capturamos los parrafos ocultos donde iran los errores
         const errNombre = document.getElementById("error-nombre");
         const errCorreo = document.getElementById("error-correo");
         const errMotivo = document.getElementById("error-motivo");
         const errComentario = document.getElementById("error-comentario");
         const msjExito = document.getElementById("soporte-exito");
 
-        // reiniciamos estilos visuales
+        // limpiamos todos los bordes rojos y ocultamos alertas viejas
         [nombre, correo, motivo, comentario].forEach(input => input.classList.remove("border-red-500", "bg-red-50"));
         [errNombre, errCorreo, errMotivo, errComentario, msjExito].forEach(msg => msg.classList.add("hidden"));
 
         let esValido = true;
         const dominiosPermitidos = ["@colocolo.cl", "@duoc.cl", "@profesor.duoc.cl", "@gmail.com"];
 
-        // 1. validamos nombre (max 100 caracteres y no vacio)
+        // validacion del nombre: que no este vacio y no pase de 100 caracteres
         const valNombre = nombre.value.trim();
         if (valNombre === "" || valNombre.length > 100) {
             errNombre.textContent = "El nombre es obligatorio y debe tener máximo 100 caracteres.";
@@ -36,7 +35,7 @@ document.addEventListener("submit", (e) => {
             esValido = false;
         }
 
-        // 2. validamos correo
+        // validacion del correo formato correcto y dominios autorizados
         const valCorreo = correo.value.trim();
         const dominioValido = dominiosPermitidos.some(dominio => valCorreo.endsWith(dominio));
         if (valCorreo === "" || !dominioValido) {
@@ -46,7 +45,7 @@ document.addEventListener("submit", (e) => {
             esValido = false;
         }
 
-        // 3. validamos motivo (lista desplegable)
+        // validacion del selector de motivos
         if (motivo.value === "") {
             errMotivo.textContent = "Debes seleccionar un motivo de contacto.";
             errMotivo.classList.remove("hidden");
@@ -54,7 +53,7 @@ document.addEventListener("submit", (e) => {
             esValido = false;
         }
 
-        // 4. validamos comentario (max 500 caracteres y no vacio)
+        // validacion del mensaje: maximo 500 caracteres
         const valComentario = comentario.value.trim();
         if (valComentario === "" || valComentario.length > 500) {
             errComentario.textContent = "El comentario es obligatorio y debe tener máximo 500 caracteres.";
@@ -63,13 +62,12 @@ document.addEventListener("submit", (e) => {
             esValido = false;
         }
 
-        // si todo pasa, inyectamos feedback visual de exito
+        // si todas las validaciones pasan limpiamos el formulario
         if (esValido) {
-            // limpiamos formulario
             e.target.reset();
-            // mostramos mensaje verde
+            // mostramos el cuadro verde de exito al final
             msjExito.classList.remove("hidden");
-            console.log("ticket de soporte generado exitosamente.");
+            console.log("el ticket fue procesado correctamente");
         }
     }
 });
